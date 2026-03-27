@@ -1,0 +1,448 @@
+/* Floating Ad Manager - Admin Styles */
+
+.fam-wrap {
+    max-width: 960px;
+    margin: 20px auto 0;
+}
+
+.fam-wrap > h1 {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    margin-bottom: 4px;
+}
+
+/* 广告块 */
+.fam-ad-block {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    transition: box-shadow 0.2s;
+}
+
+.fam-ad-block:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 广告头部 */
+.fam-ad-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: #f9f9f9;
+    border-bottom: 1px solid #eee;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+}
+
+.fam-ad-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: #1d2327;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.fam-ad-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 开关样式 */
+.fam-switch-label {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+    cursor: pointer;
+}
+
+.fam-switch-label input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.fam-switch-slider {
+    position: absolute;
+    inset: 0;
+    background: #ccc;
+    border-radius: 22px;
+    transition: 0.3s;
+}
+
+.fam-switch-slider::before {
+    content: '';
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background: #fff;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.fam-switch-label input:checked + .fam-switch-slider {
+    background: #2271b1;
+}
+
+.fam-switch-label input:checked + .fam-switch-slider::before {
+    transform: translateX(18px);
+}
+
+/* 按钮 */
+.fam-toggle-btn,
+.fam-remove-btn {
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 2px 6px;
+    cursor: pointer;
+    color: #666;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.fam-toggle-btn:hover {
+    background: #f0f0f0;
+    color: #2271b1;
+}
+
+.fam-remove-btn:hover {
+    background: #fee;
+    border-color: #d63638;
+    color: #d63638;
+}
+
+.fam-toggle-btn .dashicons {
+    transition: transform 0.3s;
+}
+
+.fam-ad-block.collapsed .fam-toggle-btn .dashicons {
+    transform: rotate(-90deg);
+}
+
+/* 广告正文 */
+.fam-ad-body {
+    padding: 0 16px 16px;
+}
+
+.fam-ad-block.collapsed .fam-ad-body {
+    display: none;
+}
+
+.fam-ad-body .form-table th {
+    width: 130px;
+    padding: 12px 10px 12px 0;
+    font-size: 13px;
+}
+
+.fam-ad-body .form-table td {
+    padding: 12px 0;
+}
+
+/* 位置选择器 */
+.fam-position-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    max-width: 520px;
+}
+
+.fam-position-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 8px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+    font-size: 13px;
+    background: #fafafa;
+}
+
+.fam-position-option:hover {
+    border-color: #2271b1;
+    background: #f0f6fc;
+}
+
+.fam-position-option.active,
+.fam-position-option:has(input:checked) {
+    border-color: #2271b1;
+    background: #e7f3ff;
+    color: #2271b1;
+    font-weight: 600;
+}
+
+/* 兼容不支持 :has 的浏览器，使用 JS 添加的 active 类即可生效 */
+.fam-position-option.active {
+    border-color: #2271b1;
+    background: #e7f3ff;
+    color: #2271b1;
+    font-weight: 600;
+}
+
+.fam-position-option input[type="radio"] {
+    display: none;
+}
+
+/* 间距设置 */
+.fam-margin-grid {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.fam-margin-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.fam-margin-item label {
+    font-weight: 500;
+    font-size: 13px;
+    color: #666;
+    min-width: 16px;
+}
+
+.fam-margin-item input[type="number"] {
+    width: 70px;
+    text-align: center;
+}
+
+/* 代码编辑器 */
+.fam-code-editor {
+    width: 100%;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #f8f9fa;
+    color: #1d2327;
+    resize: vertical;
+    tab-size: 4;
+}
+
+.fam-code-editor:focus {
+    border-color: #2271b1;
+    box-shadow: 0 0 0 1px #2271b1;
+    outline: none;
+    background: #fff;
+}
+
+/* 预览区域 */
+.fam-preview-section {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+}
+
+.fam-preview-section h4 {
+    margin: 0 0 8px;
+    font-size: 13px;
+    color: #666;
+}
+
+.fam-preview-box {
+    width: 200px;
+    height: 120px;
+    border: 2px dashed #ddd;
+    border-radius: 6px;
+    position: relative;
+    background: #fafafa;
+}
+
+.fam-preview-dot {
+    width: 16px;
+    height: 16px;
+    background: #2271b1;
+    border-radius: 3px;
+    position: absolute;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 4px rgba(34,113,177,0.4);
+}
+
+.fam-preview-dot[data-pos="top-left"] {
+    top: 8px; left: 8px;
+}
+.fam-preview-dot[data-pos="top-right"] {
+    top: 8px; right: 8px;
+}
+.fam-preview-dot[data-pos="top-center"] {
+    top: 8px; left: 50%; transform: translateX(-50%);
+}
+.fam-preview-dot[data-pos="center-left"] {
+    top: 50%; left: 8px; transform: translateY(-50%);
+}
+.fam-preview-dot[data-pos="center-right"] {
+    top: 50%; right: 8px; transform: translateY(-50%);
+}
+.fam-preview-dot[data-pos="bottom-left"] {
+    bottom: 8px; left: 8px;
+}
+.fam-preview-dot[data-pos="bottom-center"] {
+    bottom: 8px; left: 50%; transform: translateX(-50%);
+}
+.fam-preview-dot[data-pos="bottom-right"] {
+    bottom: 8px; right: 8px;
+}
+
+.fam-live-preview {
+    position: relative;
+    margin-top: 8px;
+    border: 1px solid #dcdcde;
+    border-radius: 6px;
+    background: #fff;
+    min-height: 220px;
+    overflow: hidden;
+}
+
+.fam-preview-toolbar {
+    display: flex;
+    gap: 8px;
+    margin: 4px 0 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.fam-preview-toolbar .button {
+    min-height: 30px;
+    line-height: 28px;
+    padding: 0 12px;
+}
+
+.fam-auto-preview-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #2c3338;
+    user-select: none;
+}
+
+.fam-live-preview-frame {
+    display: block;
+    width: 100%;
+    height: 240px;
+    border: 0;
+    background: #fff;
+}
+
+.fam-live-preview-empty {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8c8f94;
+    font-size: 13px;
+    background: repeating-linear-gradient(
+        -45deg,
+        #fafafa,
+        #fafafa 12px,
+        #f5f5f5 12px,
+        #f5f5f5 24px
+    );
+    pointer-events: none;
+}
+
+.fam-live-preview.has-content .fam-live-preview-empty {
+    display: none;
+}
+
+.fam-error-log {
+    margin-top: 8px;
+    border: 1px solid #dcdcde;
+    border-radius: 6px;
+    background: #fff;
+}
+
+.fam-error-log-title {
+    font-weight: 600;
+    font-size: 12px;
+    color: #50575e;
+    padding: 8px 10px;
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.fam-error-log-content {
+    padding: 10px;
+    font-family: Menlo, Consolas, Monaco, monospace;
+    font-size: 12px;
+    line-height: 1.45;
+    color: #2c3338;
+    max-height: 140px;
+    overflow: auto;
+    white-space: pre-wrap;
+}
+
+.fam-error-log.has-error {
+    border-color: #d63638;
+}
+
+.fam-error-log.has-error .fam-error-log-title {
+    color: #d63638;
+}
+
+.fam-error-item {
+    margin-bottom: 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed #f0c8c8;
+}
+
+.fam-error-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+/* 操作栏 */
+.fam-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 16px;
+    padding: 16px 0;
+}
+
+.fam-actions .button-secondary {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* 空状态 */
+.fam-empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #999;
+    background: #fff;
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.fam-empty-state .dashicons {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+    color: #ddd;
+    margin-bottom: 12px;
+}
+
+.fam-empty-state p {
+    font-size: 15px;
+    margin: 0;
+}
