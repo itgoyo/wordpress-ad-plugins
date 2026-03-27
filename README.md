@@ -2,6 +2,9 @@
 
 一个面向 WordPress 的悬浮广告管理插件，支持在后台可视化配置多个悬浮广告位，并允许直接输入 HTML、CSS、JavaScript 代码在前端展示。
 
+<img width="879" height="105" alt="image" src="https://github.com/user-attachments/assets/71367ebc-82ba-4673-907b-adcb3cbb4d7b" />
+
+
 ## 功能特性
 
 - 多广告位管理：支持添加多个独立广告配置。
@@ -120,6 +123,9 @@ ad-plugins/
 
 - 首个版本发布
 - 支持多广告位、位置控制、边距设置、页面显示范围、关闭按钮控制
+
+<img width="960" height="839" alt="image" src="https://github.com/user-attachments/assets/e5f0c37e-00bc-49b9-8823-c8e36afcfc86" />
+
 
 ## License
 
